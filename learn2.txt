@@ -1,1 +1,6 @@
+<<<<<<< HEAD
 hello in learn2 my name is ahmed
+=======
+hello in learn2 my name is ahmed
+my name is Abdelrahman ahmed qassem
+>>>>>>> master
