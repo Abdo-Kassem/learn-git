@@ -1,5 +1,2 @@
-<<<<<<< HEAD
 hello in learn2 my name is ahmed
-=======
 change in master branch
->>>>>>> master
