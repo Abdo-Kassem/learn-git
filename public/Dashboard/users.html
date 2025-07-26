@@ -1,0 +1,1040 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<!-- FORM CSS CODE -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Users</title>
+  <link rel='shortcut icon' href='images/favicon.ico' />
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.6 -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+   <!-- Font Awesome -->
+  <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="css/ionicons-2.0.1/css/ionicons.min.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="plugins/select2/select2.min.css">
+    <!-- DataTables -->
+  <link rel="stylesheet" href="plugins/DataTables-1.10.18/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="plugins/DataTables-1.10.18/extensions/FixedHeader-3.1.4/css/fixedHeader.dataTables.min.css">
+  <link rel="stylesheet" href="plugins/DataTables-1.10.18/extensions/FixedHeader-3.1.4/css/fixedHeader.bootstrap.min.css">
+  <link rel="stylesheet" href="plugins/DataTables-1.10.18/extensions/Responsive-2.2.2/css/responsive.dataTables.min.css">
+  <link rel="stylesheet" href="plugins/DataTables-1.10.18/extensions/Responsive-2.2.2/css/responsive.bootstrap.min.css">  
+  <link rel="stylesheet" href="plugins/DataTables-1.10.18/extensions/Buttons-1.5.4/css/buttons.bootstrap.min.css">  
+  <!-- end -->
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+
+
+  
+  <!-- Arabic RTL  -->
+  <link rel="stylesheet" href="dist/css/AdminLTE.rtl.min.css">
+  <link rel="stylesheet" href="dist/css/rtl.css">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.rtl.min.css">
+  
+
+
+  
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+ <!--Toastr notification -->
+  <link rel="stylesheet" href="toastr/toastr.css">
+  <!--Toastr notification end-->
+  <!-- iCheck -->
+  <link rel="stylesheet" href="plugins/iCheck/square/orange.css">
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--Custom Css File-->
+  <link rel="stylesheet" href="dist/css/custom.css">
+  <link rel="stylesheet" href="dist/css/custom-rtl.css">
+  <!-- Pace Loader -->
+  <link rel="stylesheet" href="plugins/pace/pace.min.css">
+    <!-- Theme color finder -->
+  <script type="text/javascript">
+  var theme_skin = (typeof (Storage) !== "undefined") ? localStorage.getItem('skin') : 'skin-blue';
+  theme_skin = (theme_skin=='' || theme_skin==null) ? 'skin-blue' : theme_skin;
+  var sidebar_collapse = (typeof (Storage) !== "undefined") ? localStorage.getItem('collapse') : 'skin-blue';
+  </script>
+  <!-- jQuery 2.2.3 -->
+  <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
+  <!-- </copy> -->  
+<!-- jvectormap -->
+<link rel="stylesheet" href="plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+<style type="text/css">
+   #chart_container {
+   min-width: 320px;
+   max-width: 600px;
+   margin: 0 auto;
+   }
+
+   @font-face {
+     font-family: 'Poppins';
+     src: url('css/fonts/Poppins/Poppins-Regular.ttf');
+   }
+
+   @font-face {
+     font-family: 'Sukar';
+     src: url('css/fonts/Sukar/Sukar-Regular.otf');
+   }
+
+   @font-face {
+     font-family: 'Cairo';
+     src: url('css/fonts/Cairo/Cairo-SemiBold.ttf');
+   }
+
+   @font-face {
+     font-family: 'Almarai';
+     src: url('css/fonts/Almarai/Almarai-Regular.ttf');
+   }
+
+   *,body,div,p,span,label,h1,h2,h3,h4,h5,h6
+   {
+     font-family: 'Poppins';
+   }
+   
+</style>
+
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+  <!-- Notification sound -->
+  <audio id="login">
+    <source src="sound/login.mp3" type="audio/mpeg">
+    <source src="sound/login.ogg" type="audio/ogg">
+  </audio>
+  <script type="text/javascript">
+    var login_sound = document.getElementById("login"); 
+  </script>
+  <!-- Notification end -->
+  <script type="text/javascript">
+    </script>
+  
+  <!-- Change the theme color if it is set -->
+   <script type="text/javascript">
+    if(theme_skin!='skin-blue'){
+      $("body").addClass(theme_skin);
+      $("body").removeClass('skin-blue');
+    }
+    if(sidebar_collapse=='true'){
+      $("body").addClass('sidebar-collapse');
+    }
+  </script> 
+  <!-- end -->
+
+  <header class="main-header">
+
+    <!-- Logo -->
+    <a href="" class="logo">
+      <span class="logo-mini"><b>POS</b></span>
+      <span class="logo-lg"><b>Ultimate Inventory with POS</b></span>
+    </a>
+
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+      
+      <!-- Navbar Right Menu -->
+      <div class="navbar-custom-menu">
+       
+        <ul class="nav navbar-nav">
+          <!-- <li class="text-center hidden-xs" id="">
+            <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" id="navbar-search-input" placeholder="Search Sales Invoice">
+            </div>
+          </form> 
+          </li> -->
+          <!-- User Account Menu -->
+          <li class="dropdown tasks-menu">
+            <a href="#" class="dropdown-toggle text-right" data-toggle="dropdown" title="App Language" data-toggle='tooltip'>
+              <i class="fa fa-language "></i> &nbsp;
+              Lanuage
+            </a>
+            <ul class="dropdown-menu " style="width: auto;height: auto;">
+              <li>
+                <ul class="menu">
+                  <li style="padding: 0;margin: 0;">
+                    <a href="https://pos.creatantech.com/site/langauge/9" ><h3 class='' style="font-size: 16px;">Albanian</h3></a>
+                  </li>  
+                  <li style="padding: 0;margin: 0;">
+                    <a href="https://pos.creatantech.com/site/langauge/8" ><h3 class='' style="font-size: 16px;">Arabic</h3></a>
+                  </li>  
+                                     
+                </ul>
+              </li>
+            </ul>
+          </li>
+          
+          <li class="dropdown messages-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-envelope-o fa-fw fa-lg"></i>
+              <span class="label label-success">4</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="header">You have 4 messages</li>
+              <li>
+                <!-- inner menu: contains the actual data -->
+                <ul class="menu">
+                  <li><!-- start message -->
+                    <a href="#">
+                      <div class="pull-left">
+                        <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                      </div>
+                      <h4>
+                        Support Team
+                        <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                      </h4>
+                      <p>Why not buy a new awesome theme?</p>
+                    </a>
+                  </li>
+                  <!-- end message -->
+                  <li>
+                    <a href="#">
+                      <div class="pull-left">
+                        <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                      </div>
+                      <h4>
+                        AdminLTE Design Team
+                        <small><i class="fa fa-clock-o"></i> 2 hours</small>
+                      </h4>
+                      <p>Why not buy a new awesome theme?</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="pull-left">
+                        <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                      </div>
+                      <h4>
+                        Developers
+                        <small><i class="fa fa-clock-o"></i> Today</small>
+                      </h4>
+                      <p>Why not buy a new awesome theme?</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="pull-left">
+                        <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                      </div>
+                      <h4>
+                        Sales Department
+                        <small><i class="fa fa-clock-o"></i> Yesterday</small>
+                      </h4>
+                      <p>Why not buy a new awesome theme?</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="pull-left">
+                        <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                      </div>
+                      <h4>
+                        Reviewers
+                        <small><i class="fa fa-clock-o"></i> 2 days</small>
+                      </h4>
+                      <p>Why not buy a new awesome theme?</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="footer"><a href="#">See All Messages</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown notifications-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-bell-o fa-fw fa-lg"></i>
+              <span class="label label-warning">10</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="header">You have 10 notifications</li>
+              <li>
+                <!-- inner menu: contains the actual data -->
+                <ul class="menu">
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-warning text-yellow"></i> Very long description here that may not fit into the
+                      page and may cause design problems
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-users text-red"></i> 5 new members joined
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-shopping-cart text-green"></i> 25 sales made
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-user text-red"></i> You changed your username
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="footer"><a href="#">View all</a></li>
+            </ul>
+          </li>
+            
+          
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="https://pos.creatantech.com/uploads/users/admin.png" class="user-image" alt="User Image">
+              <span class="hidden-xs">Admin</span>
+            </a>
+
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="https://pos.creatantech.com/uploads/users/admin.png" class="img-circle" alt="User Image">
+
+                <p>
+                 Admin                  <small>Year 2022</small>
+                </p>
+              </li>
+              <!-- Menu Body -->
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="">
+                      <a href="https://pos.creatantech.com/users/edit/1" style="margin-bottom:10px" class="btn btn-default btn-block ">Profile</a>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="">
+                      <a href="https://pos.creatantech.com/logout" style="margin-bottom:10px" class="btn btn-default btn-block ">Sign out</a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </li>
+          
+        </ul>
+      </div>
+
+    </nav>
+  </header>
+ 
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img src="https://pos.creatantech.com/uploads/users/admin.png" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+          <p>Admin<i class="fa fa-fw fa-check-circle text-aqua"></i></p>
+          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        </div>
+      </div>
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu">
+        <!--<li class="header">MAIN NAVIGATION</li>-->
+		  <li class="dashboard-active-li ">
+        <a href="index.html"><i class="fa fa-dashboard text-aqua"></i> <span> Dashboard</span></a>
+      </li>
+      
+		
+    
+		
+      
+	   <!-- Users -->
+          <li class="users-view-active-li users-active-li roles-list-active-li role-active-li treeview">
+          <a href="users.html">
+            <i class="fa fa-users fa-fw text-aqua"></i> <span>Users</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+                        <li class="users-active-li"><a href="https://pos.creatantech.com/users/"><i class="fa fa-plus-square-o "></i> <span>New User</span></a></li>
+                                    <li class="users-view-active-li"><a href="https://pos.creatantech.com/users/view"><i class="fa fa-list "></i> <span>Users List</span></a></li>
+                                    <li class="roles-list-active-li role-active-li">
+              <a href="https://pos.creatantech.com/roles/view">
+                <i class="fa fa-list "></i> 
+                <span>Roles List</span></a>
+            </li>
+                      </ul>
+        </li>
+            <!-- SMS -->
+          <li class="sms-active-li sms-api-active-li sms-template-active-li sms-templates-list-active-li treeview">
+          <a href="#">
+            <i class="fa fa-envelope text-aqua"></i> <span>SMS</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+                        <li class="sms-active-li"><a href="https://pos.creatantech.com/sms"><i class="fa fa-envelope-o "></i> <span>Send SMS</span></a></li>
+                                    <li class="sms-templates-list-active-li sms-template-active-li"><a href="https://pos.creatantech.com/templates/sms"><i class="fa fa-list "></i> <span>SMS Templates</span></a></li>
+                                    <li class="sms-api-active-li"><a href="https://pos.creatantech.com/sms/api"><i class="fa fa-cube "></i> <span>SMS API</span></a></li>
+                      </ul>
+        </li>
+        		<!--<li class="header">SETTINGS</li>-->
+    		<li class=" company-profile-active-li site-settings-active-li  change-pass-active-li dbbackup-active-li warehouse-active-li warehouse-list-active-li tax-active-li currency-view-active-li currency-active-li  database_updater-active-li tax-list-active-li units-list-active-li unit-active-li payment_types_list-active-li payment_types-active-li treeview">
+          <a href="#">
+            <i class="fa fa-gears text-aqua"></i> <span>Settings</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+                        <li class="company-profile-active-li"><a href="https://pos.creatantech.com/company"><i class="fa fa-suitcase "></i> <span>Company Profile</span></a></li>
+                                    <li class="site-settings-active-li"><a href="https://pos.creatantech.com/site"><i class="fa fa-shield  "></i> <span>Site Settings</span></a></li>
+            
+            
+                        <li class="tax-active-li  tax-list-active-li"><a href="https://pos.creatantech.com/tax"><i class="fa fa-percent  "></i> <span>Tax List</span></a></li>
+                                    <li class="units-list-active-li unit-active-li"><a href="https://pos.creatantech.com/units/"><i class="fa fa-list "></i> <span>Units List</span></a></li>
+            
+                        <li class="payment_types_list-active-li payment_types-active-li"><a href="https://pos.creatantech.com/payment_types/"><i class="fa fa-list "></i> <span>Payment Types List</span></a></li>
+            
+                        <li class="currency-view-active-li currency-active-li"><a href="https://pos.creatantech.com/currency/view"><i class="fa fa-gg "></i> <span>Currency List</span></a></li>
+                        <li class="change-pass-active-li"><a href="https://pos.creatantech.com/users/password_reset"><i class="fa fa-lock "></i> <span>Change Password</span></a></li>
+
+
+                        <li class="dbbackup-active-li"><a href="https://pos.creatantech.com/users/dbbackup"><i class="fa fa-database "></i> <span>Database Backup</span></a></li>
+                        
+		   </ul>
+        </li>
+                <li><a href="https://pos.creatantech.com/help/" target="_blank"  ><i class="fa fa-book "></i> <span>Help</span></a></li>
+      </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper ">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1 class="dashboard-page-title">
+        Users <small><i class="fa fa-dashboard"></i></small>
+      </h1>
+      
+    </section>
+   
+        
+
+      
+    <!-- Main content -->
+    <section class="content">
+      
+        <div class="box">
+            <div class="box-header with-border">
+              <h3 class="box-title">Users List</h3>
+                            <div class="box-tools">
+                <a class="btn btn-block btn-info" href="create.html">
+                <i class="fa fa-plus"></i> New User</a>
+              </div>
+                        </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <div class="table-responsive">
+                  <table id="datatable" class="table table-hover table-bordered text-center">
+                      <thead>
+                          <tr>
+                              <th>#</th>
+                              <th>Name</th>
+                              <th>Email</th>
+                              <th>Phone</th>
+                              <th>Date</th>
+                              <th width="1%">Actions</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr>
+                              <td>1</td>
+                              <td>Ahmed Ahmed</td>
+                              <td>ahmed@gmail.com</td>
+                              <td>01012547854</td>
+                              <td>25/5/2022</td>
+                              <td>
+                                <div class="btn-group manage-button" title="View Account">
+                                    <a class="btn btn-primary btn-o dropdown-toggle" data-toggle="dropdown" href="#">
+                                      <i class="fa fa-cog"></i> <span class="caret"></span>
+                                    </a>
+                                    <ul role="menu" class="dropdown-menu dropdown-light pull-right">
+                                        <li>
+                                            <a title="Update Record ?" href="https://pos.creatantech.com/users/edit/11">
+                                                <i class="fa fa-fw fa-eye"></i>Show
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a title="Update Record ?" href="https://pos.creatantech.com/users/edit/11">
+                                                <i class="fa fa-fw fa-edit"></i>Edit
+                                            </a>
+                                        </li>
+                                        
+                                        <li>
+                                            <a style="cursor:pointer" title="Delete Record ?" onclick="delete_user(11)">
+                                            <i class="fa fa-fw fa-trash "></i>Delete
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                              </td>
+                          </tr>
+                          <tr>
+                            <td>1</td>
+                            <td>Ahmed Ahmed</td>
+                            <td>ahmed@gmail.com</td>
+                            <td>01012547854</td>
+                            <td>25/5/2022</td>
+                            <td>
+                              <div class="btn-group manage-button" title="View Account">
+                                  <a class="btn btn-primary btn-o dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <i class="fa fa-cog"></i> <span class="caret"></span>
+                                  </a>
+                                  <ul role="menu" class="dropdown-menu dropdown-light pull-right">
+                                      <li>
+                                          <a title="Update Record ?" href="https://pos.creatantech.com/users/edit/11">
+                                              <i class="fa fa-fw fa-eye"></i>Show
+                                          </a>
+                                      </li>
+                                      <li>
+                                          <a title="Update Record ?" href="https://pos.creatantech.com/users/edit/11">
+                                              <i class="fa fa-fw fa-edit"></i>Edit
+                                          </a>
+                                      </li>
+                                      
+                                      <li>
+                                          <a style="cursor:pointer" title="Delete Record ?" onclick="delete_user(11)">
+                                          <i class="fa fa-fw fa-trash "></i>Delete
+                                          </a>
+                                      </li>
+                                  </ul>
+                              </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Ahmed Ahmed</td>
+                            <td>ahmed@gmail.com</td>
+                            <td>01012547854</td>
+                            <td>25/5/2022</td>
+                            <td>
+                              <div class="btn-group manage-button" title="View Account">
+                                  <a class="btn btn-primary btn-o dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <i class="fa fa-cog"></i> <span class="caret"></span>
+                                  </a>
+                                  <ul role="menu" class="dropdown-menu dropdown-light pull-right">
+                                      <li>
+                                          <a title="Update Record ?" href="https://pos.creatantech.com/users/edit/11">
+                                              <i class="fa fa-fw fa-eye"></i>Show
+                                          </a>
+                                      </li>
+                                      <li>
+                                          <a title="Update Record ?" href="https://pos.creatantech.com/users/edit/11">
+                                              <i class="fa fa-fw fa-edit"></i>Edit
+                                          </a>
+                                      </li>
+                                      
+                                      <li>
+                                          <a style="cursor:pointer" title="Delete Record ?" onclick="delete_user(11)">
+                                          <i class="fa fa-fw fa-trash "></i>Delete
+                                          </a>
+                                      </li>
+                                  </ul>
+                              </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Ahmed Ahmed</td>
+                            <td>ahmed@gmail.com</td>
+                            <td>01012547854</td>
+                            <td>25/5/2022</td>
+                            <td>
+                              <div class="btn-group manage-button" title="View Account">
+                                  <a class="btn btn-primary btn-o dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <i class="fa fa-cog"></i> <span class="caret"></span>
+                                  </a>
+                                  <ul role="menu" class="dropdown-menu dropdown-light pull-right">
+                                      <li>
+                                          <a title="Update Record ?" href="https://pos.creatantech.com/users/edit/11">
+                                              <i class="fa fa-fw fa-eye"></i>Show
+                                          </a>
+                                      </li>
+                                      <li>
+                                          <a title="Update Record ?" href="https://pos.creatantech.com/users/edit/11">
+                                              <i class="fa fa-fw fa-edit"></i>Edit
+                                          </a>
+                                      </li>
+                                      
+                                      <li>
+                                          <a style="cursor:pointer" title="Delete Record ?" onclick="delete_user(11)">
+                                          <i class="fa fa-fw fa-trash "></i>Delete
+                                          </a>
+                                      </li>
+                                  </ul>
+                              </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Ahmed Ahmed</td>
+                            <td>ahmed@gmail.com</td>
+                            <td>01012547854</td>
+                            <td>25/5/2022</td>
+                            <td>
+                              <div class="btn-group manage-button" title="View Account">
+                                  <a class="btn btn-primary btn-o dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <i class="fa fa-cog"></i> <span class="caret"></span>
+                                  </a>
+                                  <ul role="menu" class="dropdown-menu dropdown-light pull-right">
+                                      <li>
+                                          <a title="Update Record ?" href="https://pos.creatantech.com/users/edit/11">
+                                              <i class="fa fa-fw fa-eye"></i>Show
+                                          </a>
+                                      </li>
+                                      <li>
+                                          <a title="Update Record ?" href="https://pos.creatantech.com/users/edit/11">
+                                              <i class="fa fa-fw fa-edit"></i>Edit
+                                          </a>
+                                      </li>
+                                      
+                                      <li>
+                                          <a style="cursor:pointer" title="Delete Record ?" onclick="delete_user(11)">
+                                          <i class="fa fa-fw fa-trash "></i>Delete
+                                          </a>
+                                      </li>
+                                  </ul>
+                              </div>
+                            </td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>Ahmed Ahmed</td>
+                          <td>ahmed@gmail.com</td>
+                          <td>01012547854</td>
+                          <td>25/5/2022</td>
+                          <td>
+                            <div class="btn-group manage-button" title="View Account">
+                                <a class="btn btn-primary btn-o dropdown-toggle" data-toggle="dropdown" href="#">
+                                  <i class="fa fa-cog"></i> <span class="caret"></span>
+                                </a>
+                                <ul role="menu" class="dropdown-menu dropdown-light pull-right">
+                                    <li>
+                                        <a title="Update Record ?" href="https://pos.creatantech.com/users/edit/11">
+                                            <i class="fa fa-fw fa-eye"></i>Show
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a title="Update Record ?" href="https://pos.creatantech.com/users/edit/11">
+                                            <i class="fa fa-fw fa-edit"></i>Edit
+                                        </a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a style="cursor:pointer" title="Delete Record ?" onclick="delete_user(11)">
+                                        <i class="fa fa-fw fa-trash "></i>Delete
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                          </td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Ahmed Ahmed</td>
+                        <td>ahmed@gmail.com</td>
+                        <td>01012547854</td>
+                        <td>25/5/2022</td>
+                        <td>
+                          <div class="btn-group manage-button" title="View Account">
+                              <a class="btn btn-primary btn-o dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-cog"></i> <span class="caret"></span>
+                              </a>
+                              <ul role="menu" class="dropdown-menu dropdown-light pull-right">
+                                  <li>
+                                      <a title="Update Record ?" href="https://pos.creatantech.com/users/edit/11">
+                                          <i class="fa fa-fw fa-eye"></i>Show
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a title="Update Record ?" href="https://pos.creatantech.com/users/edit/11">
+                                          <i class="fa fa-fw fa-edit"></i>Edit
+                                      </a>
+                                  </li>
+                                  
+                                  <li>
+                                      <a style="cursor:pointer" title="Delete Record ?" onclick="delete_user(11)">
+                                      <i class="fa fa-fw fa-trash "></i>Delete
+                                      </a>
+                                  </li>
+                              </ul>
+                          </div>
+                        </td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>Ahmed Ahmed</td>
+                      <td>ahmed@gmail.com</td>
+                      <td>01012547854</td>
+                      <td>25/5/2022</td>
+                      <td>
+                        <div class="btn-group manage-button" title="View Account">
+                            <a class="btn btn-primary btn-o dropdown-toggle" data-toggle="dropdown" href="#">
+                              <i class="fa fa-cog"></i> <span class="caret"></span>
+                            </a>
+                            <ul role="menu" class="dropdown-menu dropdown-light pull-right">
+                                <li>
+                                    <a title="Update Record ?" href="https://pos.creatantech.com/users/edit/11">
+                                        <i class="fa fa-fw fa-eye"></i>Show
+                                    </a>
+                                </li>
+                                <li>
+                                    <a title="Update Record ?" href="https://pos.creatantech.com/users/edit/11">
+                                        <i class="fa fa-fw fa-edit"></i>Edit
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a style="cursor:pointer" title="Delete Record ?" onclick="delete_user(11)">
+                                    <i class="fa fa-fw fa-trash "></i>Delete
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                      </td>
+                  </tr>
+                      </tbody>
+                  </table>
+              </div>
+            </div>
+            <!-- /.box-body -->
+        </div>
+      
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  
+  <footer class="main-footer">
+    <!-- To the right -->
+    <div class="pull-right hidden-xs">
+      Anything you want
+    </div>
+    <!-- Default to the left -->
+    <strong>Copyright © 2016 <a href="#">Company</a>.</strong> All rights reserved.
+  </footer>
+  
+
+
+
+</div>
+<!-- ./wrapper -->
+
+<!-- SOUND CODE -->
+<!-- Notification sound -->
+<audio id="failed">
+  <source src="sound/failed.mp3" type="audio/mpeg">
+  <source src="sound/failed.ogg" type="audio/ogg">
+</audio>
+<audio id="success">
+  <source src="sound/success.mp3" type="audio/mpeg">
+  <source src="sound/success.ogg" type="audio/ogg">
+</audio>
+<script type="text/javascript">
+  var failed_sound = document.getElementById("failed"); 
+  var success_sound = document.getElementById("success"); 
+</script>
+
+<script type="text/javascript">
+</script>
+<!-- Notification end --><!-- TABLES CODE -->
+<!-- Bootstrap 3.3.6 -->
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="plugins/DataTables-1.10.18/js/jquery.dataTables.min.js"></script>
+<script src="plugins/DataTables-1.10.18/js/dataTables.bootstrap.min.js"></script>
+<script src="plugins/DataTables-1.10.18/extensions/FixedHeader-3.1.4/js/dataTables.fixedHeader.min.js"></script>
+<script src="plugins/DataTables-1.10.18/extensions/Responsive-2.2.2/js/dataTables.responsive.min.js"></script>
+<script src="plugins/DataTables-1.10.18/extensions/Responsive-2.2.2/js/responsive.bootstrap.min.js"></script>
+<!-- end -->
+<!--  FOR EXPORT BUTTONS START -->
+<script src="plugins/DataTables-1.10.18/extensions/JSZip-2.5.0/jszip.min.js"></script>
+<script src="plugins/DataTables-1.10.18/extensions/pdfmake-0.1.36/pdfmake.min.js"></script>
+<script src="plugins/DataTables-1.10.18/extensions/pdfmake-0.1.36/vfs_fonts.js"></script>
+<script src="plugins/DataTables-1.10.18/extensions/Buttons-1.5.4/js/dataTables.buttons.min.js"></script>
+<script src="plugins/DataTables-1.10.18/extensions/Buttons-1.5.4/js/buttons.flash.min.js"></script>
+<script src="plugins/DataTables-1.10.18/extensions/Buttons-1.5.4/js/buttons.html5.min.js"></script>
+<script src="plugins/DataTables-1.10.18/extensions/Buttons-1.5.4/js/buttons.print.min.js"></script>
+<script src="plugins/DataTables-1.10.18/extensions/Buttons-1.5.4/js/buttons.colVis.min.js"></script>
+<script src="plugins/DataTables-1.10.18/extensions/Buttons-1.5.4/js/buttons.bootstrap.min.js"></script>
+<!--  FOR EXPORT BUTTONS END -->
+
+<!-- SlimScroll -->
+<script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="plugins/fastclick/fastclick.js"></script>
+<!-- Select2 -->
+<script src="plugins/select2/select2.full.min.js"></script>
+<!-- AdminLTE App -->
+<script>
+  var AdminLTEOptions = {
+    /*https://adminlte.io/themes/AdminLTE/documentation/index.html*/
+    sidebarExpandOnHover: true,
+    navbarMenuHeight: "200px", //The height of the inner menu
+    animationSpeed: 250,
+  };
+</script>
+<script src="dist/js/app.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="dist/js/demo.js"></script>
+<!-- page script -->
+<!--Toastr notification -->
+<script src="toastr/toastr.js"></script>
+<script src="toastr/toastr_custom.js"></script>
+<!--Toastr notification end-->
+
+<!-- Custom JS -->
+<script src="js/special_char_check.js"></script>
+<script src="js/custom.js"></script>
+
+<!-- Pace Loader -->
+<script src="plugins/pace/pace.min.js"></script>
+<script type="text/javascript">
+$(document).ajaxStart(function() { Pace.restart(); }); 
+</script>  
+<!-- Sweet alert -->
+<script src="js/sweetalert.min.js"></script>
+<!-- iCheck -->
+<script src="plugins/iCheck/icheck.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+  $(function () {
+    $('input').iCheck({
+      checkboxClass: 'icheckbox_square-orange',
+      /*uncheckedClass: 'bg-white',*/
+      radioClass: 'iradio_square-orange',
+      increaseArea: '10%' // optional
+    });
+  });
+</script>
+<!-- Initialize Select2 Elements -->
+<script type="text/javascript"> $(".select2").select2(); </script>
+<!-- Initialize toggler -->
+<script type="text/javascript">
+  $(document).ready(function(){
+      $('[data-toggle="popover"]').popover();   
+  });
+</script>
+
+<script type="text/javascript" >
+$(function($) { // this script needs to be loaded on every page where an ajax POST may happen
+  //var csrf = $('input[name="csrf_token"]').val();  // <- get token value from hidden form input
+    $.ajaxSetup({ data: {'csrf_test_name' : 'c1efd63adbdf540d3ce3c96c852dc484' }  }); });
+</script>
+<script type="text/javascript">
+	function show_delete_btn() {
+  var group_check_count = $(".group_check").prop("checked") ? 1: 0;
+  var check_count = $('#example2').find('input[type=checkbox]:checked').length-parseInt(group_check_count);
+
+  //console.log($('#example2 > tbody').find('.checkbox').length);
+  if(parseInt(check_count)>0){
+    $(".delete_btn").removeClass('hidden').show();
+  }    
+  else{
+    $(".delete_btn").addClass('hidden').hide();
+  }
+
+  if($('#example2 > tbody').find('.checkbox').length == check_count){
+    $(".group_check").prop("checked",true).iCheck('update');
+  }
+  else{
+    $(".group_check").prop("checked",false).iCheck('update');
+  }
+
+}
+$('.group_check').on('ifChanged', function(event) {
+    if(event.target.checked){
+      $(".column_checkbox").prop("checked",true).iCheck('update');
+    }
+    else{
+      $(".column_checkbox").prop("checked",false).iCheck('update');
+    }
+    show_delete_btn();
+});
+
+
+function call_code(){
+  $('.column_checkbox').on('ifChanged', function(event) {
+      show_delete_btn();
+  });
+}
+</script>
+<script type="text/javascript">
+$(document).ready(function () { setTimeout(function() {$( ".alert-dismissable" ).fadeOut( 1000, function() {});}, 10000); });
+</script>
+<script type="text/javascript">
+  function round_off(input=0){
+          return input;
+      }
+</script>
+<!-- bootstrap datepicker -->
+
+<!-- ChartJS 1.0.1 -->
+<script src="https://pos.creatantech.com/theme/plugins/chartjs/Chart.min.js"></script>
+
+
+<!-- Sparkline -->
+<script src="https://pos.creatantech.com/theme/plugins/sparkline/jquery.sparkline.min.js"></script>
+<!-- jvectormap -->
+<script src="https://pos.creatantech.com/theme/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="https://pos.creatantech.com/theme/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+
+ <!-- BAR CHART -->
+<script src="https://pos.creatantech.com/theme/plugins/highcharts/highcharts.js"></script>
+<script src="https://pos.creatantech.com/theme/plugins/highcharts/highcharts-more.js"></script>
+<script src="https://pos.creatantech.com/theme/plugins/highcharts/exporting.js"></script>
+<!-- BAR CHART END -->
+<!-- PIE CHART -->
+<script src="https://pos.creatantech.com/theme/plugins/highcharts/export-data.js"></script>
+<!-- PIE CHART END -->
+
+<!-- Make sidebar menu hughlighter/selector -->
+<script>$(".dashboard-active-li").addClass("active");</script>
+<script>
+  $(function () {
+    $('#example2,#example3').DataTable({
+      "pageLength" : 5,
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false
+    });
+  });
+</script>
+<script>
+  $(function () {
+    /* ChartJS
+     * -------
+     * Here we will create a few charts using ChartJS
+     */
+
+
+    //-------------
+    //- BAR CHART -
+    //-------------
+    var barChartData = {
+      labels: ["January", "February", "March", "April", "May", "June", "July","August","September","October","November","December"],
+      datasets: [
+        {
+          label: "Purchase Amt(in ₹)",
+          fillColor: "rgba(210, 214, 222, 1)",
+          strokeColor: "rgba(210, 214, 222, 1)",
+          pointColor: "rgba(210, 214, 222, 1)",
+          pointStrokeColor: "#c1c7d1",
+          pointHighlightFill: "#fff",
+          pointHighlightStroke: "rgba(220,220,220,1)",
+          data: [310475.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        },
+        {
+          label: "Sales Amt(in ₹)",
+          fillColor: "rgba(60,141,188,0.9)",
+          strokeColor: "rgba(60,141,188,0.8)",
+          pointColor: "#3b8bba",
+          pointStrokeColor: "rgba(60,141,188,1)",
+          pointHighlightFill: "#fff",
+          pointHighlightStroke: "rgba(60,141,188,1)",
+          data: [350320.70, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        }
+      ]
+    };
+    var barChartCanvas = $("#barChart").get(0).getContext("2d");
+    var barChart = new Chart(barChartCanvas);
+    barChartData.datasets[1].fillColor = "#00a65a";
+    barChartData.datasets[1].strokeColor = "#00a65a";
+    barChartData.datasets[1].pointColor = "#00a65a";
+    var barChartOptions = {
+      //Boolean - Whether the scale should start at zero, or an order of magnitude down from the lowest value
+      scaleBeginAtZero: true,
+      //Boolean - Whether grid lines are shown across the chart
+      scaleShowGridLines: true,
+      //String - Colour of the grid lines
+      scaleGridLineColor: "rgba(0,0,0,.05)",
+      //Number - Width of the grid lines
+      scaleGridLineWidth: 1,
+      //Boolean - Whether to show horizontal lines (except X axis)
+      scaleShowHorizontalLines: true,
+      //Boolean - Whether to show vertical lines (except Y axis)
+      scaleShowVerticalLines: true,
+      //Boolean - If there is a stroke on each bar
+      barShowStroke: true,
+      //Number - Pixel width of the bar stroke
+      barStrokeWidth: 2,
+      //Number - Spacing between each of the X value sets
+      barValueSpacing: 5,
+      //Number - Spacing between data sets within X values
+      barDatasetSpacing: 1,
+      //String - A legend template
+      legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].fillColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>",
+      //Boolean - whether to make the chart responsive
+      responsive: true,
+      maintainAspectRatio: true
+    };
+
+    barChartOptions.datasetFill = false;
+    barChart.Bar(barChartData, barChartOptions);
+  });
+
+
+  /* PIE CHART*/
+         Highcharts.chart('bar_container', {
+             chart: {
+                 plotBackgroundColor: null,
+                 plotBorderWidth: null,
+                 plotShadow: false,
+                 type: 'pie'
+             },
+             title: {
+                 text: 'Top 10 Trending Items %'
+             },
+             tooltip: {
+                 /*pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'*/
+                 pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+             },
+             plotOptions: {
+                 pie: {
+                     allowPointSelect: true,
+                     cursor: 'pointer',
+                     dataLabels: {
+                         enabled: true,
+                         format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                         style: {
+                             color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                         }
+                     }
+                 }
+             },
+             series: [{
+                 name: 'Item',
+                 colorByPoint: true,
+                 data: [
+                 {name:'Lee Shirts', y:8.00},{name:'Signature Jeans', y:7.00},{name:'Lee Jacket', y:3.00},{name:'Suits', y:10.00},{name:'Rd Shoes', y:3.00},{name:'VP Shoes', y:4.00},{name:'WM Shoes', y:2.00},{name:'How to Analyze People', y:1.00},{name:'I Do What I Do', y:5.00},{name:'Apple PC', y:3.00},                 ]
+             }]
+         });
+         /* PIE CHART END*/
+</script>
+</body>
+</html>

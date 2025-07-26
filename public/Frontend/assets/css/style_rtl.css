@@ -1,0 +1,43 @@
+.header {
+    direction: rtl !important;
+}
+
+.banner.image-bg {
+    background: linear-gradient(30deg, #007c20 0%, #6cff8b 100%);
+    direction: rtl;
+}
+
+.banner-text {
+    text-align: right !important;
+}
+
+.banner.image-bg .image-container {
+    display: flex;
+    justify-content: left;
+}
+
+.button-store .custom-btn i {
+    margin-right: 0 !important;
+    margin-left: 10px;
+}
+
+footer {
+    direction: rtl;
+}
+
+.contact-page {
+    direction: rtl;
+}
+
+.contact-page .phone {
+    direction: ltr;
+    display: inline-block;
+}
+
+.privacy-policy-page, .about-page {
+    direction: rtl;
+}
+
+.field-email, .field-name {
+    text-align: right;
+}

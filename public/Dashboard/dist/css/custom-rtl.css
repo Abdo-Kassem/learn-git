@@ -1,0 +1,93 @@
+.sidebar-menu>li a
+{
+    padding-right: 15px;
+}
+
+.skin-blue .treeview-menu>li>a
+{
+    padding-right: 25px;
+}
+
+.content-header
+{
+	padding-bottom: 0 !important;
+}
+
+
+.user-panel>.info
+{
+	right: 55px !important;
+}
+
+.navbar-nav>.messages-menu>.dropdown-menu>li .menu>li>a>div>img
+{
+	margin: 0;
+	margin-left: 10px;
+}
+
+
+.manage-button ul.dropdown-menu
+{
+	left: 0px !important;
+	top: -88px;
+	border-radius: 5px;
+	transition: .3s;
+	border: 0;
+	border: 2px solid #ccc;
+}
+
+div.dataTables_wrapper div.dataTables_filter
+{
+	text-align: left !important ;
+}
+
+/* Delete Button Style  */
+.manage-button ul.dropdown-menu button
+{
+	border: none !important;
+	outline: 0;
+	width: 100%;
+	transition: .1s;
+    padding: 3px 22px;
+    font-size: 15px;
+	text-align: right !important;
+	color: #555;
+	background-color: #fff;
+}
+
+.manage-button ul.dropdown-menu button:hover
+{
+	background-color: #337ab7;
+	color: #fff;
+}
+
+
+.select2-container--default .select2-selection--single, .select2-selection .select2-selection--single
+{
+	text-align: right !important;
+	padding:7px 10px 
+}
+
+.select2-container--default .select2-search--dropdown .select2-search__field
+{
+	text-align: right !important;
+	padding:7px 10px 
+}
+
+.select2-results__option[aria-selected]
+{
+	text-align: right !important;
+	padding: 8px 20px;
+}
+
+.select2-container--default .select2-selection--single, .select2-selection .select2-selection--single
+{
+	padding: 3px 12px !important;
+}
+
+
+.select2-container .select2-selection--single .select2-selection__rendered
+{
+	margin-top: 1px !important;
+	padding-right: 15px !important;
+}

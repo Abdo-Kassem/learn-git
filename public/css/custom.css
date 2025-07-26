@@ -1,0 +1,59 @@
+p {
+    margin: 10px 0;
+}
+
+h2 { 
+    color: #ff0000c2; 
+}
+
+section {
+    max-width: 900px;
+    margin: auto;
+}
+
+section #invoice-company-details {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#invoice-company-details .order {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 45px;
+}
+
+#invoice-company-details .order h2 {
+    font-weight: bold;
+    background-color: #f4ff9a;
+    max-width: 255px;
+    padding: 5px;
+    margin-bottom: 0px;
+    margin: 20px auto 10px;
+    border-radius: 7px
+}
+
+.invoice-items-header {
+    margin-top: 50px;
+}
+
+.invoice-items-header  h2 {
+    margin-bottom: 0;
+}
+
+#invoice-company-details {
+    margin-bottom: 50px;
+}
+
+section #invoice-items-details table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+    border: 1px solid #eee;
+    text-align: center;
+}
